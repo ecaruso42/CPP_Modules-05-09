@@ -9,6 +9,7 @@ int main(void){
 		Bureaucrat b4 = b3;
 		Bureaucrat b5("CopyOperatorTest", 70);
 		b5 = b2;
+
 		std::cout << "b1= " << b1 << std::endl;
 		std::cout << "b2= " << b2 << std::endl;
 		std::cout << "b3= " << b3 << std::endl;
