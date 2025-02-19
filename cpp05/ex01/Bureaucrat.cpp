@@ -1,5 +1,15 @@
 #include "Bureaucrat.hpp"
 
+void Bureaucrat::signForm(Form f){
+	try {
+		f.beSigned(*this);
+		std::cout << getName() << " signed " << f.getName();
+	}
+	catch (const std::exception& e) {
+		std::cout << getName() << " couldn't sign " << f.getName() << " because " << e.what() << std::endl;
+	}
+}
+
 void Bureaucrat::incrementGrade(){
 	if (this->_grade == 1){
 		throw GradeTooHighException();
@@ -27,7 +37,6 @@ Bureaucrat::Bureaucrat(const Bureaucrat& other) : _name(other._name), _grade(oth
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other) {
 	if (this != &other) {
-		this->_name = other._name;
 		this->_grade = other._grade;
 	}
 	return *this;

@@ -1,7 +1,10 @@
 #pragma once
+#include "Form.hpp"
 #include <string>
 #include <stdexcept>
 #include <iostream>
+
+class Form;
 
 class Bureaucrat {
 private:
@@ -12,6 +15,8 @@ public:
 	Bureaucrat(const Bureaucrat& other);
 	Bureaucrat& operator=(const Bureaucrat& other);
 	~Bureaucrat();
+
+	void signForm(Form f);
 
 	void incrementGrade();
 	void decrementGrade();

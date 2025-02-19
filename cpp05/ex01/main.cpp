@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main(void){
 	try{
@@ -8,6 +9,10 @@ int main(void){
 		Bureaucrat b3("Paolo", 50);
 		Bureaucrat b4 = b3;
 		Bureaucrat b5("CopyOperatorTest", 70);
+		Form f1("Form1", 30, 30);
+		Form f2("Form2", 1, 1);
+		b1.signForm(f1);
+		b2.signForm(f2);
 		b5 = b2;
 
 		std::cout << "b1= " << b1 << std::endl;
