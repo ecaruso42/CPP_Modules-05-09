@@ -8,8 +8,9 @@ private:
 	std::string _name;
 	int _grade;
 public:
-	//ricorda di implementare copy constructor e copy operator
 	Bureaucrat(const std::string& set_name, int set_grade);
+	Bureaucrat(const Bureaucrat& other);
+	Bureaucrat& operator=(const Bureaucrat& other);
 	~Bureaucrat();
 
 	void incrementGrade();
