@@ -11,6 +11,8 @@ int main(void){
 		Bureaucrat b5("CopyOperatorTest", 70);
 		Form f1("Form1", 30, 30);
 		Form f2("Form2", 1, 1);
+		Form f3("Form3", 159, 1);
+		Form f4("Form4", 1, 159);
 		b1.signForm(f1);
 		b2.signForm(f2);
 		b5 = b2;
@@ -37,6 +39,9 @@ int main(void){
 		std::cout << "\nTEST DEI GETTER\n" << std::endl;
 		std::cout << "Nome b3 = " << b3.getName() << std::endl;
 		std::cout << "Grado b3 = " << b3.getGrade() << std::endl;
+	}
+	catch (const Form::GradeTooLowException& e){
+		std::cerr << "Exception caught: " << e.what() << std::endl;
 	}
 	catch (const Bureaucrat::GradeTooHighException& e) {
         std::cerr << "Exception caught: " << e.what() << std::endl;

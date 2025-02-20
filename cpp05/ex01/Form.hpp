@@ -18,7 +18,7 @@ public:
 	Form& operator=(const Form& other);
 	~Form();
 
-	int beSigned(Bureaucrat& b);
+	void beSigned(Bureaucrat& b);
 
 	std::string getName() const;
 	bool getSign() const;
@@ -41,8 +41,8 @@ public:
     		const char* what() const throw() {
         	return _message.c_str();
     		}
+			~GradeTooLowException() throw() {}
 };
-
 	friend std::ostream& operator<<(std::ostream& os, const Form& f);
 };
 

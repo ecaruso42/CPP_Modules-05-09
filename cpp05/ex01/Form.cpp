@@ -1,12 +1,11 @@
 #include "Form.hpp"
 
-int Form::beSigned(Bureaucrat& b) {
+void Form::beSigned(Bureaucrat& b) {
 	if (b.getGrade() <= getSigGrade()) {
 		_sign = true;
-		return 1;
 	}
 	else {
-		return -1;
+		throw GradeTooLowException(b.getName() + " couldn't sign " + getName() + " because grade is too low");
 	}
 }
 
@@ -51,5 +50,5 @@ Form& Form::operator=(const Form& other) {
 	return *this;
 }
 
-Form::~Form(){
+Form::~Form() {
 }
