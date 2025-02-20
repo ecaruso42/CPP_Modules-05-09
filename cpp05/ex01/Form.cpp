@@ -1,12 +1,10 @@
 #include "Form.hpp"
 
 void Form::beSigned(Bureaucrat& b) {
-	if (b.getGrade() <= getSigGrade()) {
-		_sign = true;
-	}
-	else {
+	if (b.getGrade() >= getSigGrade()) {
 		throw GradeTooLowException(b.getName() + " couldn't sign " + getName() + " because grade is too low");
 	}
+	this->_sign = true;
 }
 
 std::string Form::getName() const{
@@ -26,7 +24,7 @@ int Form::getExcGrade() const{
 }
 
 std::ostream& operator<<(std::ostream& os, const Form& f) {
-	os << "Form name: " << f.getName() << ", sign status: " << f.getSign() << ", required sign grade: " << f.getSigGrade() << "required exec grade" << f.getExcGrade();
+	os << "Form name: " << f.getName() << ", sign status: " << f.getSign() << ", required sign grade: " << f.getSigGrade() << ", required exec grade: " << f.getExcGrade();
 	return os;
 }
 

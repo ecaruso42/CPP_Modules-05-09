@@ -9,19 +9,30 @@ int main(void){
 		Bureaucrat b3("Paolo", 50);
 		Bureaucrat b4 = b3;
 		Bureaucrat b5("CopyOperatorTest", 70);
+		b5 = b2;
+		
 		Form f1("Form1", 30, 30);
 		Form f2("Form2", 1, 1);
-		Form f3("Form3", 159, 1);
-		Form f4("Form4", 1, 159);
+		Form f5 = f1;
+		Form f6("CopyOperatorTestForm", 30, 30);
+		//scommentare per testare i grade out of bound;
+		//Form f3("Form3", 159, 1);
+		//Form f4("Form4", 1, 159);
+		std::cout << "f1= " << f1 << std::endl;
 		b1.signForm(f1);
 		b2.signForm(f2);
-		b5 = b2;
+		f6 = f1;
 
 		std::cout << "b1= " << b1 << std::endl;
 		std::cout << "b2= " << b2 << std::endl;
 		std::cout << "b3= " << b3 << std::endl;
 		std::cout << "b4= " << b4 << std::endl;
 		std::cout << "b5= " << b5 << std::endl;
+
+		std::cout << "f1= " << f1 << std::endl;
+		std::cout << "f2= " << f2 << std::endl;
+		std::cout << "f5= " << f5 << std::endl;
+		std::cout << "f6= " << f6 << std::endl;
 
 		std::cout << "\nTEST INCREMENTO, DECREMENTO ED ECCEZIONI\n" << std::endl;
 		b1.incrementGrade();

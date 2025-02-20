@@ -16,7 +16,7 @@ public:
 	Bureaucrat& operator=(const Bureaucrat& other);
 	~Bureaucrat();
 
-	void signForm(Form f);
+	void signForm(Form& f);
 
 	void incrementGrade();
 	void decrementGrade();

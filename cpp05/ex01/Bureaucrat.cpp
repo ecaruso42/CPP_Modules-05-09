@@ -1,6 +1,6 @@
 #include "Bureaucrat.hpp"
 
-void Bureaucrat::signForm(Form f){
+void Bureaucrat::signForm(Form& f){
 	try {
 		f.beSigned(*this);
 		std::cout << getName() << " signed " << f.getName() << std::endl;
