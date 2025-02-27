@@ -1,5 +1,14 @@
 #include "AForm.hpp"
 
+void AForm::execute(const Bureaucrat& executor) const {
+	if (!this->_sign)
+		std::cout << "The Form have to be signed, come back when you meet the requirements" << std::endl;
+	else if (executor.getGrade() < this->getExcGrade())
+		std::cout << "I'm sorry but it seems the Bureaucrat doesn't have the grade required to execute this form, search for a higher level Bureaucrat" << std::endl;
+	else
+		executeAction();
+}
+
 void AForm::beSigned(Bureaucrat& b) {
 	if (b.getGrade() >= getSigGrade()) {
 		throw GradeTooLowException(b.getName() + " couldn't sign " + getName() + " because grade is too low");

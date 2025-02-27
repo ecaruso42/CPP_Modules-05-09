@@ -13,4 +13,5 @@ class RobotomyRequestForm : public AForm{
 		~RobotomyRequestForm();
 
 		std::string getTarget() const;
+		void executeAction() const;
 };

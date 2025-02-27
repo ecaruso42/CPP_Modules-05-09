@@ -12,7 +12,7 @@ private:
 	bool _sign;
 	const int _sigGrade;
 	const int _excGrade;
-	
+
 public:
 	AForm(const std::string& set_name, int set_sigGrade, int set_excGrade);
 	AForm(const AForm& other);
@@ -25,6 +25,9 @@ public:
 	bool getSign() const;
 	int getSigGrade() const;
 	int getExcGrade() const;
+
+	void execute(const Bureaucrat& executor) const;
+	virtual void executeAction() const = 0;
 
 	class GradeTooHighException : public std::exception {
 		public:
