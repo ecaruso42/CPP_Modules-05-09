@@ -1,5 +1,9 @@
 #include "PresidentialPardonForm.hpp"
 
+void PresidentialPardonForm::executeAction() const{
+	std::cout << target << " has beeen pardoned by Zaphod Beeblebrox" << std::endl;
+}
+
 PresidentialPardonForm::PresidentialPardonForm(const std::string target) : AForm("PresidentialForm", 25, 5), target(target){
 	std::cout << "Presidential Form has been created" << std::endl;
 }

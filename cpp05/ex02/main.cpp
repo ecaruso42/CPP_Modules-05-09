@@ -1,6 +1,8 @@
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main(void){
 	try{
@@ -12,6 +14,14 @@ int main(void){
 		ShrubberyCreationForm Tree("grass");
 		Tree.beSigned(b1);
 		Tree.execute(b1);
+
+		RobotomyRequestForm Robot("Gino");
+		Robot.beSigned(b1);
+		Robot.execute(b1);
+
+		PresidentialPardonForm Galeotto("Pacciani");
+		Galeotto.beSigned(b1);
+		Galeotto.execute(b1);
 	}
 	catch (const AForm::GradeTooLowException& e){
 		std::cerr << "Exception caught: " << e.what() << std::endl;
