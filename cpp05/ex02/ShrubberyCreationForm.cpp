@@ -6,16 +6,16 @@ void ShrubberyCreationForm::executeAction() const{
 	fileName = this->getTarget() + "_shrubbery";
 	std::ofstream file(fileName.c_str());
 	if (file.is_open()){
-		file << "   			,@@@@@@@, ";
-		file << "   	,,,.   ,@@@@@@/@@,  .oo8888o. ";
-		file << "    ,&%%&%&&%,@@@@@/@@@@@@,8888\88/8o ";
-		file << "   ,%&\%&&%&&%,@@@\@@@/@@@88\88888/88' ";
-		file << "   %&&%&%&/%&&%@@\@@/ /@@@88888\88888' ";
-		file << "   %&&%/ %&%%&&@@\ V /@@' `88\8 `/88' ";
-		file << "   `&%\ ` /%&'    |.|        \ '|8' ";
-		file << "   	|o|        | |         | | ";
-		file << "   	|.|        | |         | | ";
- 		file << "    \\/ ._\//_/__/  ,\_//__\\/.  \_//__/_ ";
+		file << "   			,@@@@@@@, " << std::endl;
+		file << "   	,,,.   ,@@@@@@/@@,  .oo8888o. " << std::endl;
+		file << "    ,&%%&%&&%,@@@@@/@@@@@@,8888888/8o " << std::endl;
+		file << "   ,%&&%&&%&&%,@@@@@@@/@@@88888888/88' " << std::endl;
+		file << "   %&&%&%&/%&&%@@@@@/ /@@@88888888888' " << std::endl;
+		file << "   %&&%/ %&%%&&@@\' V /@@' `8888 `/88' " << std::endl;
+		file << "   `&%\' ` /%&'   |.|        \' '|8' " << std::endl;
+		file << "   	|o|        | |         | | " << std::endl;
+		file << "   	|.|        | |         | | " << std::endl;
+ 		file << "    \\/ ._\'//_/__/  ,\'_//__\\/.  \'_//__/_ " << std::endl;
 		file.close();
 	}
 	else
@@ -30,6 +30,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& other)
 }
 
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& other){
+	(void) other;
 	return *this;
 }
 
