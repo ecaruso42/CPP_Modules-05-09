@@ -12,7 +12,7 @@ AForm* Intern::makeForm(std::string formName, std::string formTarget){
 		{"presidential request", &PresidentialPardonForm::create}
 	};
 
-	for (size_t i = 0; i < 3, i++) {
+	for (size_t i = 0; i < 3; i++) {
 		if (formTypes[i].name == formName) {
 			std::cout << "Intern creates " << formName << std::endl;
 			return formTypes[i].create(formTarget);
