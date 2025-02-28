@@ -1,5 +1,14 @@
 #include "Bureaucrat.hpp"
 
+void Bureaucrat::executeForm(AForm const & form){
+	if (form.execute(*this) > 1){
+		std::cout << this->getName() << " executed " << form.getName() << std::endl;
+	}
+	else{
+		std::cout << this->getName() << " failed to execute " << form.getName() << std::endl;
+	}
+}
+
 void Bureaucrat::signForm(AForm& f){
 	try {
 		f.beSigned(*this);

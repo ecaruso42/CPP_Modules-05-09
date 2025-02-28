@@ -26,7 +26,7 @@ public:
 	int getSigGrade() const;
 	int getExcGrade() const;
 
-	void execute(const Bureaucrat& executor) const;
+	int execute(const Bureaucrat& executor) const;
 	virtual void executeAction() const = 0;
 
 	class GradeTooHighException : public std::exception {
@@ -49,4 +49,3 @@ public:
 };
 	friend std::ostream& operator<<(std::ostream& os, const AForm& f);
 };
-

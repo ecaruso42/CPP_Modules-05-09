@@ -13,15 +13,15 @@ int main(void){
 		
 		ShrubberyCreationForm Tree("grass");
 		Tree.beSigned(b1);
-		Tree.execute(b1);
+		b1.executeForm(Tree);
 
 		RobotomyRequestForm Robot("Gino");
 		Robot.beSigned(b1);
-		Robot.execute(b1);
+		b1.executeForm(Robot);
 
 		PresidentialPardonForm Galeotto("Pacciani");
 		Galeotto.beSigned(b1);
-		Galeotto.execute(b1);
+		b2.executeForm(Galeotto);
 	}
 	catch (const AForm::GradeTooLowException& e){
 		std::cerr << "Exception caught: " << e.what() << std::endl;

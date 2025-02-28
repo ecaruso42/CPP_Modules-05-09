@@ -17,6 +17,7 @@ public:
 	~Bureaucrat();
 
 	void signForm(AForm& f);
+	void executeForm(AForm const &form);
 
 	void incrementGrade();
 	void decrementGrade();
