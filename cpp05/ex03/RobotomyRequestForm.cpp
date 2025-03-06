@@ -12,6 +12,10 @@ void RobotomyRequestForm::executeAction() const{
 	}
 }
 
+static AForm* create(std::string target) { 
+	return new RobotomyRequestForm(target); 
+}
+
 RobotomyRequestForm::RobotomyRequestForm(const std::string target) : AForm("RobotomyForm", 72, 45), target(target){
 	std::cout << "Robotomy Form has been created" << std::endl;
 }

@@ -13,6 +13,7 @@ class ShrubberyCreationForm : public AForm{
 		ShrubberyCreationForm& operator=(const ShrubberyCreationForm& other);	
 		~ShrubberyCreationForm();
 
+		static AForm* create(std::string target);
 		std::string getTarget() const;
 		void executeAction() const;
 };

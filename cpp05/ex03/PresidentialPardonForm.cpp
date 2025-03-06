@@ -4,6 +4,10 @@ void PresidentialPardonForm::executeAction() const{
 	std::cout << target << " has beeen pardoned by Zaphod Beeblebrox" << std::endl;
 }
 
+static AForm* create(std::string target) { 
+	return new PresidentialPardonForm(target); 
+}
+
 PresidentialPardonForm::PresidentialPardonForm(const std::string target) : AForm("PresidentialForm", 25, 5), target(target){
 	std::cout << "Presidential Form has been created" << std::endl;
 }
