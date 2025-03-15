@@ -12,7 +12,7 @@ void RobotomyRequestForm::executeAction() const{
 	}
 }
 
-static AForm* create(std::string target) { 
+AForm* RobotomyRequestForm::create(std::string target) { 
 	return new RobotomyRequestForm(target); 
 }
 

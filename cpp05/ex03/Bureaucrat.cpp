@@ -1,7 +1,7 @@
 #include "Bureaucrat.hpp"
 
 void Bureaucrat::executeForm(AForm const & form){
-	if (form.execute(*this) > 1){
+	if (form.execute(*this) > 0){
 		std::cout << this->getName() << " executed " << form.getName() << std::endl;
 	}
 	else{

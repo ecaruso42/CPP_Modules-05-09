@@ -17,7 +17,7 @@ public:
 	AForm(const std::string& set_name, int set_sigGrade, int set_excGrade);
 	AForm(const AForm& other);
 	AForm& operator=(const AForm& other);
-	~AForm();
+	virtual ~AForm();
 
 	void beSigned(Bureaucrat& b);
 

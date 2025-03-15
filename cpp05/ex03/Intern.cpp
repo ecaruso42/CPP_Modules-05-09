@@ -19,7 +19,7 @@ AForm* Intern::makeForm(std::string formName, std::string formTarget){
 		}
 	}
 	std::cout << "Error: " << formName << " does not exist" << std::endl;
-	return nullptr;
+	return NULL;
 }
 
 Intern::Intern(){

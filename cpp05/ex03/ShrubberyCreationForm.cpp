@@ -22,7 +22,7 @@ void ShrubberyCreationForm::executeAction() const{
 		std::cout << "Error: could not open file" << std::endl;
 }
 
-static AForm* create(std::string target) { 
+AForm* ShrubberyCreationForm::create(std::string target) { 
 	return new ShrubberyCreationForm(target); 
 }
 
