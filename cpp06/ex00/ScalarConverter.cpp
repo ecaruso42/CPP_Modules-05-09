@@ -85,6 +85,15 @@ void ScalarConverter::convert(std::string input){
     i = static_cast<int>(d);
     c = static_cast<char>(i);
 
+    if(!isdigit(input[0]))
+    {
+        std::cout << "char: impossible" << std::endl;
+        std::cout << "int: impossible" << std::endl;
+        std::cout << "float: impossible" << std::endl;
+        std::cout << "double: impossible" << std::endl;
+        return;
+    }
+
     if (i >= 32 && i <= 126)
         std::cout << "char: '" << c << "'" << std::endl;
     else
