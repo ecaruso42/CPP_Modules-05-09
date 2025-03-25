@@ -1,5 +1,4 @@
 #pragma once
-#include "Array.tpp"
 #include <iostream>
 
 template<typename T> class Array {
@@ -10,6 +9,13 @@ template<typename T> class Array {
 		Array(unsigned int n);
 		Array();
 		Array(const Array<T> &other);
-		Array& operator=(const Array<T> &ohter);
+		Array& operator=(const Array<T> &other);
 		~Array();
+
+		T& operator[](unsigned int index);
+		const T& operator[](unsigned int index) const;
+
+		unsigned int size() const;
 };
+
+#include "Array.tpp"
