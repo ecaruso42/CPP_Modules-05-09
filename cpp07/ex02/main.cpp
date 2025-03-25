@@ -14,7 +14,7 @@ int main() {
 
         Array<int> arr2 = arr1;
         arr2[1] = 99;
-        std::cout << "Arr2 (copia modificata): ";
+        std::cout << "Arr2 (modified copy): ";
         for (unsigned int i = 0; i < arr2.size(); i++)
             std::cout << arr2[i] << " ";
         std::cout << std::endl;
@@ -22,15 +22,15 @@ int main() {
         Array<int> arr3;
         arr3 = arr1;
         arr3[2] = 77;
-        std::cout << "Arr3 (dopo assegnazione da arr1): ";
+        std::cout << "Arr3 (after assignment from arr1): ";
         for (unsigned int i = 0; i < arr3.size(); i++)
             std::cout << arr3[i] << " ";
         std::cout << std::endl;
 
-        std::cout << "Accesso fuori dai limiti: " << arr1[10] << std::endl;
+        std::cout << "Access out of bound: " << arr1[10] << std::endl;
 
     } catch (std::exception& e) {
-        std::cerr << "Errore: " << e.what() << std::endl;
+        std::cerr << "Error: " << e.what() << std::endl;
     }
 
     return 0;
