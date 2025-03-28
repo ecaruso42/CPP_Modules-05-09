@@ -99,7 +99,10 @@ void ScalarConverter::convert(std::string input){
     else
         std::cout << "char: Non displayable" << std::endl;
 
-    std::cout << "int: " << i << std::endl;
+    if (i < INT_MIN || i > INT_MAX)
+        std::cout << "int: " << i << std::endl;
+    else
+        std::cout << "int: impossible (overflow)" << std::endl;
     std::cout << std::fixed << std::setprecision(1) << "float: " << f << "f" << std::endl;
     std::cout << std::fixed << std::setprecision(1) << "double: " << d << std::endl;
 }
