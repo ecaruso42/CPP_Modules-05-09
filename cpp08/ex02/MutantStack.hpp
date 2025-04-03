@@ -3,10 +3,11 @@
 #include <iostream>
 #include <stack>
 #include <deque>
+#include <vector>
 
 template<typename T, typename Container = std::deque<T> >
 
-class MutantStack : std::stack<T>{
+class MutantStack : public std::stack<T, Container>{
 	public:
 		MutantStack(){}
 		MutantStack(const MutantStack& other){
@@ -19,4 +20,9 @@ class MutantStack : std::stack<T>{
 			return *this;
 		}
 		~MutantStack(){}
+
+		typedef typename Container::iterator iterator;
+
+		iterator begin() { return this->c.begin(); }
+    	iterator end() { return this->c.end(); }
 };
