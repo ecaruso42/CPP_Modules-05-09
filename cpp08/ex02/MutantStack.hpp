@@ -6,7 +6,9 @@
 template<typename T>
 
 class MutantStack : std::stack<T>{
-	private:
-
 	public:
+		MutantStack();
+		MutantStack(const MutantStack& other);
+		MutantStack& operator=(const MutantStack& other);
+		~MutantStack();
 };
