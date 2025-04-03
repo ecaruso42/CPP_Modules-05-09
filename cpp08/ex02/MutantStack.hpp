@@ -1,8 +1,11 @@
 #pragma once
 
 #include <iostream>
+#include <stack>
 
-class MutantStack{
+template<typename T>
+
+class MutantStack : std::stack<T>{
 	private:
 
 	public:
