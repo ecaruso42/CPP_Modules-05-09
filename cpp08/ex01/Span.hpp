@@ -3,6 +3,7 @@
 #include <vector>
 #include <algorithm>
 #include <limits>
+#include <ctime>
 
 class Span
 {
@@ -13,7 +14,7 @@ public:
 	void addNumber(int nb);
 	int shortestSpan();
 	int longestSpan();
-	void addSequence(std::vector<int> v);
+	void addSequence(unsigned int count);
 
 	Span(unsigned int n);
 	Span();
