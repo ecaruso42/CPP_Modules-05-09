@@ -28,5 +28,32 @@ int main(void){
 		++it;
 	}
 	std::stack<int> s(mstack);
+
+	std::list<int> list;
+
+	list.push_front(5);
+	list.push_front(17);
+
+	std::cout << list.front() << std::endl;
+
+	list.pop_front();
+
+	std::cout << list.size() << std::endl;
+
+	list.push_back(3);
+	list.push_back(5);
+	list.push_back(737);
+	list.push_back(0);
+
+	std::list<int>::iterator lit = list.begin();
+	std::list<int>::iterator lite = list.end();
+
+	++lit;
+	--lit;
+	while (lit != lite)
+	{
+		std::cout << *lit << std::endl;
+		++lit;
+	}
 	return 0;
 }

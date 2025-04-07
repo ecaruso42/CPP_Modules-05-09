@@ -4,6 +4,7 @@
 #include <stack>
 #include <deque>
 #include <vector>
+#include <list>
 
 template<typename T, typename Container = std::deque<T> >
 
