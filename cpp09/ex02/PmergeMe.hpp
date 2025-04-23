@@ -9,6 +9,9 @@ class PmergeMe{
 		std::vector<int> _v;
 		std::deque<int> _d;
 	public:
+		int pushVector(char **argv);
+		int pushDeque(char **argv);
+
 		PmergeMe();
 		PmergeMe(const PmergeMe& other);
 		const PmergeMe& operator=(const PmergeMe &other);
