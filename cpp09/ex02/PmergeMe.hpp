@@ -3,6 +3,8 @@
 #include <vector>
 #include <deque>
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 
 class PmergeMe{
 	private:
@@ -11,6 +13,11 @@ class PmergeMe{
 	public:
 		int pushVector(char **argv);
 		int pushDeque(char **argv);
+		void run();
+		void printCont();
+
+		template<typename T>
+		void mergeInsertSort(T& container);
 
 		PmergeMe();
 		PmergeMe(const PmergeMe& other);

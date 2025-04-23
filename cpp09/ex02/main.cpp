@@ -5,7 +5,16 @@ int main(int argc, char** argv){
         std::cerr << "Error: argoument count not valid" << std::endl;
         return 1;
     }
+	PmergeMe FJ;
     argv++;
-    pushVector(argv);
-    pushDeque(argv);
+
+	if(FJ.pushVector(argv) == -1){
+		std::cerr << "Error: number in argoument not correct" << std::endl;
+		return 1;
+	}
+	if(FJ.pushDeque(argv) == -1){
+		std::cerr << "Error: number in argoument not correct" << std::endl;
+		return 1;
+	}
+	FJ.run();
 }
