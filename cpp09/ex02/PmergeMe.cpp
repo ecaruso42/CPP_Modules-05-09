@@ -29,40 +29,42 @@ void PmergeMe::mergeInsertSort(T& container){
 
 	T greaterNbs;
 	T minorNbs;
+	size_t n = container.size();
 
-	for(size_t i = 0; i < container.size(); i += 2){
-		if(i + 1 < container.size()){
-			int a = container[i];
-			int b = container[i + 1];
-			if(a < b) 
-				std::swap(a, b);
-			greaterNbs.push_back(a);
-			minorNbs.push_back(b);
-		}
-		else
-			minorNbs.push_back(container[i]);
+	for(size_t i = 0; i + 1 < n; i += 2){
+		int a = container[i];
+		int b = container[i + 1];
+		if(a < b) 
+			std::swap(a, b);
+		greaterNbs.push_back(a);
+		minorNbs.push_back(b);
 	}
-	
+	if (n % 2 == 1) {
+		minorNbs.push_back(container[n - 1]);
+	}
 	mergeInsertSort(greaterNbs);
 
-	std::vector<int> jSequence;
-	size_t j0 = 0;
-	size_t j1 = 1;
-	while(j1 < minorNbs.size()){
-		jSequence.push_back(j1);
-		int j2 = j1 + 2 * j0;
-		j0 = j1;
-		j1 = j2;
+	std::vector<size_t> jSequence;
+    if (minorNbs.size() > 1) {
+        size_t j0 = 0;
+		size_t j1 = 1;
+        jSequence.push_back(j1);
+        while (1) {
+            size_t j2 = j1 + 2 * j0;
+            if (j2 >= minorNbs.size() || j2 <= j1)
+                break;
+            jSequence.push_back(j2);
+            j0 = j1;
+            j1 = j2;
+        }
 	}
 	std::vector<bool>inserted(minorNbs.size(), false);
 	for(size_t k = 0; k < jSequence.size(); ++k){
 		size_t idx = jSequence[k];
-		if(idx < minorNbs.size()){
-			int val = minorNbs[idx];
-			typename T::iterator pos = std::lower_bound(greaterNbs.begin(), greaterNbs.end(), val);
-			greaterNbs.insert(pos, val);
-			inserted[idx] = true;
-		}
+		int val = minorNbs[idx];
+		typename T::iterator pos = std::lower_bound(greaterNbs.begin(), greaterNbs.end(), val);
+		greaterNbs.insert(pos, val);
+		inserted[idx] = true;
 	}
 	for(size_t i = 0; i < minorNbs.size(); ++i){
 		if(!inserted[i]){
