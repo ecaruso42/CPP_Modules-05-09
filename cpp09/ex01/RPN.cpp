@@ -6,7 +6,7 @@ void RPN::doTheMath(std::string exp){
 
 	while(ss >> token){
 		if(token == "+" || token == "-" || token == "*" || token == "/"){
-			if(_s.size() == 2){
+			if(_s.size() >= 2){
 				int a, b, c;
 
 				b = _s.top();
