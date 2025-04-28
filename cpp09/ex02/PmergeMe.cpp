@@ -4,13 +4,13 @@ void PmergeMe::run(){
 	std::cout << "Before: ";
 	printCont();
 
-	std::clock_t vStart = std::clock();
+	clock_t vStart = clock();
 	mergeInsertSort(_v);
-	std::clock_t vEnd = std::clock();
+	clock_t vEnd = clock();
 
-	std::clock_t dStart = std::clock();
+	clock_t dStart = clock();
 	mergeInsertSort(_d);
-	std::clock_t dEnd = std::clock();
+	clock_t dEnd = clock();
 
 	std::cout << "After: ";
 	printCont();
@@ -18,8 +18,8 @@ void PmergeMe::run(){
 	double vTime = static_cast<double>(vEnd - vStart) / CLOCKS_PER_SEC * 1000000;
 	double dTime = static_cast<double>(dEnd - dStart) / CLOCKS_PER_SEC * 1000000;
 
-	std::cout << "Time to process a range of " << _v.size() << " elements with std::vector: " << vTime << " us" << std::endl;
-	std::cout << "Time to process a range of " << _d.size() << " elements with std::deque: " << dTime << " us" << std::endl;
+	std::cout<<"Time to process a range of " << _v.size() <<" elements with std::vector : " <<std::fixed << std::setprecision(5) << vTime / 100 << " us" <<std::endl;
+	std::cout<<"Time to process a range of " << _d.size() <<" elements with std::deque : " <<std::fixed << std::setprecision(5) << dTime / 100 << " us" <<std::endl;
 }
 
 template<typename T>
@@ -85,8 +85,15 @@ void PmergeMe::printCont(){
 }
 
 static bool isValidN(char* nb){
+	if (nb == NULL || *nb == '\0')
+        return false;
+
+    for ( ; *nb != '\0'; ++nb) {
+        if (!std::isdigit(static_cast<unsigned char>(*nb)))
+            return false;
+    }
 	int n = std::atoi(nb);
-	if(n > 0 && nb)
+	if(n >= 0 && nb)
 		return true;
 	return false;
 }

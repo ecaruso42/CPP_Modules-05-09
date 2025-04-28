@@ -9,11 +9,11 @@ int main(int argc, char** argv){
     argv++;
 
 	if(FJ.pushVector(argv) == -1){
-		std::cerr << "Error: number in argoument not correct" << std::endl;
+		std::cerr << "Error: number in argoument is not correct" << std::endl;
 		return 1;
 	}
 	if(FJ.pushDeque(argv) == -1){
-		std::cerr << "Error: number in argoument not correct" << std::endl;
+		std::cerr << "Error: number in argoument is not correct" << std::endl;
 		return 1;
 	}
 	FJ.run();
